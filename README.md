@@ -4,6 +4,27 @@ An Android application based on the Edex-UI project. I maintain the updated desk
 
 ---
 
+# ⚠️ Disclaimer: Under Development
+This application is a work in progress and is not yet feature-complete. Please do not expect a fully polished and stable app at this stage. It is currently under active development.
+
+## 📦 Builds & Installation
+Pre-built APKs
+Signed release and debug APKs are available in resources [here](https://github.com/theelderemo/Edex-UI-android/releases/tag/Initial)
+
+Building From Source
+You are welcome to build the app from the source code.
+
+Clone the repository:
+
+```
+git clone https://github.com/theelderemo/Edex-UI-android'
+```
+Open the project in Android Studio.
+
+Allow Gradle to sync and download all required dependencies.
+
+Build the project via Build > Build Bundle(s) / APK(s) > Build APK(s).
+
 ## 🚀 What's Working / Implemented
 
 - **Main Terminal Interface** — A fully functional terminal emulator serves as the app's central component.  
