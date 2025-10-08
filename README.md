@@ -8,7 +8,7 @@ An Android application based on the Edex-UI project. I maintain the updated desk
 - Sci-Fi-Inspired UI: The entire user experience is wrapped in a futuristic, Tron-like visual theme. This includes the color scheme, typography, animations, and sound effects.
 - Modular Dashboard: The main screen is a dashboard composed of several modules (widgets) that provide real-time system information.
 - Touch-Friendly Interface: Although originally for desktops, the interface is designed with a touch-screen in mind, making it suitable for a tablet or large-screen phone.
-- On-Screen Keyboard: A virtual keyboard is displayed on-screen, with multiple layouts and themes.
+- On-Screen Keyboard: A virtual QWERTY keyboard is displayed on-screen with support for terminal input.
 - File System Navigator: A graphical file browser is integrated into the UI.
 
 # Main UI Shell & Theming
@@ -18,8 +18,10 @@ An Android application based on the Edex-UI project. I maintain the updated desk
 - Startup Animation: A boot-up sequence with a retro-futuristic animation and sound effects is shown when the app starts.
 - Sound Effects: Most user interactions are accompanied by sound effects, such as key presses, window openings, and notifications.
 - On-Screen Keyboard
-    - Multiple Layouts: The on-screen keyboard supports various international and alternative layouts like Dvorak and Colemak.
-    - Key Press Animations & Sounds: Each key press is visualized with an animation and an audible click sound.
+    - QWERTY Layout: The on-screen keyboard uses a QWERTY layout optimized for terminal input.
+    - Special Keys: Includes ESC, TAB, CTRL, ALT, SHIFT, and other special keys useful for terminal commands.
+    - Toggle Button: A keyboard icon button in the terminal allows users to show/hide the virtual keyboard.
+    - Haptic & Sound Feedback: Each key press provides haptic feedback and an audible click sound.
 - File System Navigator
     - Directory Listing: Displays a list of files and folders in the current directory.
     - Directory Traversal: Users can navigate up and down the file system hierarchy.

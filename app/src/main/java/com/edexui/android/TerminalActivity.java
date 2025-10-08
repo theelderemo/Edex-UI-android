@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -18,22 +19,43 @@ public class TerminalActivity extends AppCompatActivity {
     private TextView terminalOutputText;
     private EditText terminalInput;
     private Button terminalSendButton;
+    private Button keyboardToggleButton;
     private ScrollView terminalScrollView;
+    private LinearLayout keyboardContainer;
     private TerminalEmulator terminal;
+    private VirtualKeyboard virtualKeyboard;
+    private SoundManager soundManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.terminal_tab);
 
-        // Initialize terminal emulator
+        // Initialize terminal emulator and sound manager
         terminal = new TerminalEmulator();
+        soundManager = new SoundManager(this);
 
         // Initialize views
         terminalOutputText = findViewById(R.id.terminalOutputText);
         terminalInput = findViewById(R.id.terminalInput);
         terminalSendButton = findViewById(R.id.terminalSendButton);
+        keyboardToggleButton = findViewById(R.id.keyboardToggleButton);
         terminalScrollView = findViewById(R.id.terminalScrollView);
+        keyboardContainer = findViewById(R.id.keyboardContainer);
+
+        // Initialize virtual keyboard
+        virtualKeyboard = new VirtualKeyboard(this, soundManager);
+        View keyboardView = virtualKeyboard.createKeyboardView(getLayoutInflater());
+        virtualKeyboard.setTargetInput(terminalInput);
+        keyboardContainer.addView(keyboardView);
+        
+        // Set keyboard visibility listener
+        virtualKeyboard.setVisibilityListener(new VirtualKeyboard.KeyboardVisibilityListener() {
+            @Override
+            public void onKeyboardHidden() {
+                keyboardContainer.setVisibility(View.GONE);
+            }
+        });
 
         // Display initial output
         updateOutput();
@@ -42,7 +64,17 @@ public class TerminalActivity extends AppCompatActivity {
         terminalSendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                soundManager.playClick();
                 executeCommand();
+            }
+        });
+
+        // Set up keyboard toggle button listener
+        keyboardToggleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                soundManager.playClick();
+                toggleKeyboard();
             }
         });
 
@@ -58,6 +90,19 @@ public class TerminalActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    /**
+     * Toggle virtual keyboard visibility
+     */
+    private void toggleKeyboard() {
+        if (keyboardContainer.getVisibility() == View.VISIBLE) {
+            keyboardContainer.setVisibility(View.GONE);
+            virtualKeyboard.hideKeyboard();
+        } else {
+            keyboardContainer.setVisibility(View.VISIBLE);
+            virtualKeyboard.showKeyboard();
+        }
     }
 
     /**
@@ -97,5 +142,13 @@ public class TerminalActivity extends AppCompatActivity {
     public void onBackPressed() {
         // Return to main activity
         super.onBackPressed();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (soundManager != null) {
+            soundManager.release();
+        }
     }
 }
