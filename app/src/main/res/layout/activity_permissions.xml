@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to Edex UI!"
+        android:textSize="24sp"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="In order for this app to work properly, you must allow the following permissions:"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Storage Permission -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Storage"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This permission is required to access and manage files on your device."
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btn_storage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Grant Storage Permission" />
+    </LinearLayout>
+
+    <!-- Internet Permission -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Internet"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This permission is required to connect to the internet and check the network state."
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btn_internet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Grant Internet Permission" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_continue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Continue"
+        android:visibility="gone" />
+
+</LinearLayout>

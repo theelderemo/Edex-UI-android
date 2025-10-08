@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/edex_terminal_bg"
+    android:gravity="center">
+
+    <!-- Main Logo/Title -->
+    <TextView
+        android:id="@+id/splashText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="╔══════════════════════════╗\n║   EDEX-UI ANDROID       ║\n╚══════════════════════════╝"
+        android:textColor="@color/edex_primary"
+        android:textSize="20sp"
+        android:fontFamily="monospace"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:alpha="0"/>
+
+    <!-- Boot sequence text -->
+    <TextView
+        android:id="@+id/bootText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/splashText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:textColor="@color/edex_success"
+        android:textSize="14sp"
+        android:fontFamily="monospace"
+        android:text="INITIALIZING..."/>
+
+    <!-- Version info -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp"
+        android:text="v1.0.0"
+        android:textColor="@color/edex_text_secondary"
+        android:textSize="12sp"
+        android:fontFamily="monospace"/>
+
+</RelativeLayout>

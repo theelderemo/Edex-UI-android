@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Terminal Tab Layout with interactive input -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/edex_terminal_bg"
+    android:padding="8dp">
+
+    <!-- Terminal Output -->
+    <ScrollView
+        android:id="@+id/terminalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="vertical">
+
+        <TextView
+            android:id="@+id/terminalOutputText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/edex_success"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:padding="8dp"/>
+    </ScrollView>
+
+    <!-- Terminal Input -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$ "
+            android:textColor="@color/edex_primary"
+            android:textSize="14sp"
+            android:fontFamily="monospace"/>
+
+        <EditText
+            android:id="@+id/terminalInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:textColor="@color/edex_text_primary"
+            android:textColorHint="@color/edex_text_secondary"
+            android:hint="Enter command..."
+            android:textSize="14sp"
+            android:fontFamily="monospace"
+            android:imeOptions="actionDone"
+            android:inputType="text"/>
+
+        <Button
+            android:id="@+id/terminalSendButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send"
+            android:textColor="@color/edex_terminal_bg"
+            android:backgroundTint="@color/edex_primary"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+</LinearLayout>
