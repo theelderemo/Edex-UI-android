@@ -182,27 +182,56 @@ This document describes the visual appearance and user interface design of the E
 - Scrollable output area
 - Command input at bottom
 - Send button (cyan background)
+- Keyboard toggle button (⌨ icon, orange background)
+- Virtual keyboard container (hidden by default)
 - Full-screen black background
 
 ### 4. On-Screen Keyboard Layout
 
+**Status: ✅ IMPLEMENTED**
+
+The virtual keyboard is now fully functional and integrated with the terminal.
+
 ```
 ┌────────────────────────────────────────────────┐
-│[ESC][1][2][3][4][5][6][7][8][9][0][⌫]        │
-│[TAB][Q][W][E][R][T][Y][U][I][O][P]            │
-│[CTRL][A][S][D][F][G][H][J][K][L][↵]           │
-│[SHIFT][Z][X][C][V][B][N][M][,][.][/]          │
-│[ALT][      SPACE      ][-][=][HIDE]           │
+│                 TERMINAL OUTPUT                 │
+│ $ help                                          │
+│ Available commands...                           │
+│                                                 │
+│ $ [Input Field]                 [Send] [⌨]     │ ← Keyboard toggle
+├────────────────────────────────────────────────┤
+│ Virtual Keyboard (appears when toggled)        │
+│ ┌──────────────────────────────────────────┐   │
+│ │[ESC][1][2][3][4][5][6][7][8][9][0][⌫]  │   │
+│ │[TAB][Q][W][E][R][T][Y][U][I][O][P]      │   │
+│ │[CTRL][A][S][D][F][G][H][J][K][L][↵]     │   │
+│ │[SHIFT][Z][X][C][V][B][N][M][,][.][/]    │   │
+│ │[ALT][      SPACE      ][-][=][HIDE]     │   │
+│ └──────────────────────────────────────────┘   │
 └────────────────────────────────────────────────┘
 ```
 
 **Keyboard Design:**
 - Each key: 48dp height, rounded corners
-- Dark blue surface with cyan text
+- Dark blue surface (`#151B3D`) with cyan text (`#00D9FF`)
 - 2dp margin between keys
-- Tactile feedback on press
-- Sound effect on keypress
+- Haptic feedback on press (KEYBOARD_TAP)
+- Sound effect on keypress (beep via SoundManager)
 - Sci-fi styled font
+- Toggle visibility with ⌨ button or HIDE key
+
+**Keyboard Features:**
+- **QWERTY Layout**: Standard layout optimized for terminal input
+- **Modifier Keys**: SHIFT (uppercase), CTRL, ALT with visual toggle states
+- **Special Keys**: 
+  - ESC: Clear input field
+  - TAB: Insert tab character
+  - Enter (↵): Execute command
+  - Backspace (⌫): Delete character
+  - HIDE: Hide keyboard
+- **Input Integration**: Directly inserts text into terminal EditText at cursor
+- **Feedback**: Haptic vibration + sound on each key press
+- **State Management**: Modifier keys toggle and show visual state
 
 ### 5. Process List Screen
 
