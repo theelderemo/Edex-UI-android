@@ -2,6 +2,45 @@
 
 An Android application based on the Edex-UI project. I maintain the updated desktop version located here [eDEX UI Security Patched](https://github.com/theelderemo/eDEX-UI-security-patched)
 
+---
+
+## 🚀 What's Working / Implemented
+
+- **Main Terminal Interface** — A fully functional terminal emulator serves as the app's central component.  
+- **Sci-Fi-Inspired UI** — A futuristic, Tron-like visual theme featuring bold colors, typography, animations, and sound effects.  
+- **Modular Dashboard** — The main screen is a dashboard composed of several modules that provide real-time system information.  
+- **Touch-Friendly Interface** — Designed for touch screens, making it ideal for tablets or large-screen phones.  
+- **File System Navigator** — A graphical file browser integrated directly into the UI.  
+- **Fullscreen Mode** — Supports a fully immersive fullscreen experience.  
+- **Startup Animation** — Displays a retro-futuristic boot-up animation with accompanying sound effects.  
+
+---
+
+## 🧩 To-Do List
+
+### 🔹 Terminal & UI Enhancements
+- [ ] **Multiple Tabs** — Allow users to open and manage multiple terminal sessions in tabs.  
+- [ ] **On-Screen Keyboard**
+  - [ ] Integrate and enable an on-screen keyboard.  
+  - [ ] Add support for multiple layouts (Dvorak, Colemak, etc.).  
+- [ ] **Theme Customization** — Implement a UI for theme selection and customization.  
+- [ ] **Live Wallpaper Mode** — Enable Edex-UI as a dynamic live wallpaper.
+
+### 🔹 File System Navigator
+- [ ] Add icons for different file types.  
+- [ ] Display file details (permissions, size, modification date).  
+- [ ] Add a toggle to show/hide hidden files.  
+- [ ] Implement a “Go to Path” input field.
+
+### 🔹 Network & Modules
+- [ ] **Network Information** — Add a world map visualization for network traffic.  
+- [ ] **Additional Modules**
+  - [ ] Fuzzy Finder  
+  - [ ] Document Reader  
+  - [ ] Media Player  
+
+---
+
 # Core Functionality & App Structure
 - Main Terminal Interface: The central component of the app is a fully-functional terminal emulator.
 - Multiple Tabs: Users can open and manage multiple terminal sessions in tabs.
@@ -51,3 +90,5 @@ An Android application based on the Edex-UI project. I maintain the updated desk
 - Fuzzy Finder: A quick search tool to find and open files.
 - Document Reader: A simple text file viewer.
 - Media Player: A basic media player for audio and video files.
+
+
